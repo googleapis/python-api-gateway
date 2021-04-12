@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/python-api-gateway.git",
-        "sha": "6dcf6a69aea5cb162ccbaa3554a2eedf5716f3c6"
+        "sha": "35b8df9233f529bf7f6c84d755c3f1c09e555004"
       }
     },
     {
@@ -105,6 +105,7 @@
     "docs/apigateway_v1/types.rst",
     "docs/conf.py",
     "docs/multiprocessing.rst",
+    "google-cloud-apigateway-v1-py.tar.gz",
     "google/cloud/apigateway/__init__.py",
     "google/cloud/apigateway/py.typed",
     "google/cloud/apigateway_v1/__init__.py",
