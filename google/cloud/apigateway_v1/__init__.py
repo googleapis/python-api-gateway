@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.api_gateway_service import ApiGatewayServiceClient
+
 from .types.apigateway import Api
 from .types.apigateway import ApiConfig
 from .types.apigateway import CreateApiConfigRequest
@@ -38,7 +38,6 @@ from .types.apigateway import OperationMetadata
 from .types.apigateway import UpdateApiConfigRequest
 from .types.apigateway import UpdateApiRequest
 from .types.apigateway import UpdateGatewayRequest
-
 
 __all__ = (
     "Api",
