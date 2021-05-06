@@ -40,7 +40,6 @@ from .types.apigateway import UpdateApiRequest
 from .types.apigateway import UpdateGatewayRequest
 
 __all__ = (
-    "ApiGatewayServiceClient",
     "Api",
     "ApiConfig",
     "CreateApiConfigRequest",
@@ -63,4 +62,5 @@ __all__ = (
     "UpdateApiConfigRequest",
     "UpdateApiRequest",
     "UpdateGatewayRequest",
+    "ApiGatewayServiceClient",
 )

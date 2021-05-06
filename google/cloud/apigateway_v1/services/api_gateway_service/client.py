@@ -433,7 +433,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.ListGatewaysRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.ListGateways
             parent (str):
                 Required. Parent resource of the Gateway, of the form:
@@ -513,7 +514,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.GetGatewayRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.GetGateway
             name (str):
                 Required. Resource name of the form:
@@ -591,7 +593,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.CreateGatewayRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.CreateGateway
             parent (str):
                 Required. Parent resource of the Gateway, of the form:
@@ -692,7 +695,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.UpdateGatewayRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.UpdateGateway
             gateway (google.cloud.apigateway_v1.types.Gateway):
                 Required. Gateway resource.
@@ -788,7 +792,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.DeleteGatewayRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.DeleteGateway
             name (str):
                 Required. Resource name of the form:
@@ -880,7 +885,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.ListApisRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.ListApis
             parent (str):
                 Required. Parent resource of the API, of the form:
@@ -960,7 +966,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.GetApiRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.GetApi
             name (str):
                 Required. Resource name of the form:
@@ -1033,7 +1040,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.CreateApiRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.CreateApi
             parent (str):
                 Required. Parent resource of the API, of the form:
@@ -1133,7 +1141,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.UpdateApiRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.UpdateApi
             api (google.cloud.apigateway_v1.types.Api):
                 Required. API resource.
@@ -1226,7 +1235,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.DeleteApiRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.DeleteApi
             name (str):
                 Required. Resource name of the form:
@@ -1318,7 +1328,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.ListApiConfigsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.ListApiConfigs
             parent (str):
                 Required. Parent resource of the API Config, of the
@@ -1398,7 +1409,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.GetApiConfigRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.GetApiConfig
             name (str):
                 Required. Resource name of the form:
@@ -1473,7 +1485,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.CreateApiConfigRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.CreateApiConfig
             parent (str):
                 Required. Parent resource of the API Config, of the
@@ -1572,7 +1585,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.UpdateApiConfigRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.UpdateApiConfig
             api_config (google.cloud.apigateway_v1.types.ApiConfig):
                 Required. API Config resource.
@@ -1666,7 +1680,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.DeleteApiConfigRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.DeleteApiConfig
             name (str):
                 Required. Resource name of the form:

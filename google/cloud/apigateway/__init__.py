@@ -14,13 +14,12 @@
 # limitations under the License.
 #
 
-from google.cloud.apigateway_v1.services.api_gateway_service.client import (
-    ApiGatewayServiceClient,
-)
 from google.cloud.apigateway_v1.services.api_gateway_service.async_client import (
     ApiGatewayServiceAsyncClient,
 )
-
+from google.cloud.apigateway_v1.services.api_gateway_service.client import (
+    ApiGatewayServiceClient,
+)
 from google.cloud.apigateway_v1.types.apigateway import Api
 from google.cloud.apigateway_v1.types.apigateway import ApiConfig
 from google.cloud.apigateway_v1.types.apigateway import CreateApiConfigRequest
@@ -45,10 +44,10 @@ from google.cloud.apigateway_v1.types.apigateway import UpdateApiRequest
 from google.cloud.apigateway_v1.types.apigateway import UpdateGatewayRequest
 
 __all__ = (
-    "ApiGatewayServiceClient",
-    "ApiGatewayServiceAsyncClient",
     "Api",
     "ApiConfig",
+    "ApiGatewayServiceAsyncClient",
+    "ApiGatewayServiceClient",
     "CreateApiConfigRequest",
     "CreateApiRequest",
     "CreateGatewayRequest",
