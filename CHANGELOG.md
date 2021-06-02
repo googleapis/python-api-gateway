@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/python-api-gateway/compare/v0.2.0...v0.3.0) (2021-06-02)
+
+
+### Features
+
+* bump release level to production/stable ([#25](https://www.github.com/googleapis/python-api-gateway/issues/25)) ([0eadb82](https://www.github.com/googleapis/python-api-gateway/commit/0eadb82978e33261a4aa56b54a546d418658080a))
+
 ## [0.2.0](https://www.github.com/googleapis/python-api-gateway/compare/v0.1.0...v0.2.0) (2021-05-28)
 
 
