@@ -20,12 +20,15 @@ import os
 import setuptools  # type: ignore
 
 name = "google-cloud-api-gateway"
-version = "0.2.0"
+version = "1.0.2"
 description = "API Gateway client library"
 release_status = "Development Status :: 5 - Production/Stable"
 url = "https://github.com/googleapis/python-api-gateway"
 dependencies = [
-    "google-api-core[grpc] >= 1.22.2, < 2.0.0dev",
+    # NOTE: Maintainers, please do not require google-api-core>=2.x.x
+    # Until this issue is closed
+    # https://github.com/googleapis/google-cloud-python/issues/10566
+    "google-api-core[grpc] >= 1.26.0, <3.0.0dev",
     "proto-plus >= 1.4.0",
     "packaging >= 14.3",
 ]
@@ -45,7 +48,11 @@ setuptools.setup(
     author_email="googleapis-packages@google.com",
     license="Apache 2.0",
     url=url,
-    packages=setuptools.PEP420PackageFinder.find(),
+    packages=[
+        package
+        for package in setuptools.PEP420PackageFinder.find()
+        if package.startswith("google")
+    ],
     namespace_packages=("google", "google.cloud"),
     platforms="Posix; MacOS X; Windows",
     include_package_data=True,
