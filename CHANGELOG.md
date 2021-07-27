@@ -3,14 +3,14 @@
 ### [1.0.3](https://www.github.com/googleapis/python-api-gateway/compare/v1.0.2...v1.0.3) (2021-07-27)
 
 
-### Features
-
-* add Samples section to CONTRIBUTING.rst ([#48](https://www.github.com/googleapis/python-api-gateway/issues/48)) ([4e791d2](https://www.github.com/googleapis/python-api-gateway/commit/4e791d28ed4d798a93e5e622254f8ceec5bb7fdb))
-
-
 ### Bug Fixes
 
 * enable self signed jwt for grpc ([#52](https://www.github.com/googleapis/python-api-gateway/issues/52)) ([55a8883](https://www.github.com/googleapis/python-api-gateway/commit/55a888387c10ef20044a6a8e38e7667898d12219))
+
+
+### Documentation
+
+* add Samples section to CONTRIBUTING.rst ([#48](https://www.github.com/googleapis/python-api-gateway/issues/48)) ([4e791d2](https://www.github.com/googleapis/python-api-gateway/commit/4e791d28ed4d798a93e5e622254f8ceec5bb7fdb))
 
 
 ### Miscellaneous Chores
