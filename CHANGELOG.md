@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.5](https://www.github.com/googleapis/python-api-gateway/compare/v1.0.4...v1.0.5) (2021-10-07)
+
+
+### Bug Fixes
+
+* improper types in pagers generation ([fc86cd1](https://www.github.com/googleapis/python-api-gateway/commit/fc86cd1c93a932c3c205524040d8547f70dbfb1c))
+
 ### [1.0.4](https://www.github.com/googleapis/python-api-gateway/compare/v1.0.3...v1.0.4) (2021-09-24)
 
 
