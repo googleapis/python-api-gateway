@@ -16,7 +16,7 @@
 from collections import OrderedDict
 import functools
 import re
-from typing import Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core.client_options import ClientOptions
@@ -543,8 +543,7 @@ class ApiGatewayServiceAsyncClient:
                 maximum=60.0,
                 multiplier=2,
                 predicate=retries.if_exception_type(
-                    core_exceptions.ServiceUnavailable,
-                    core_exceptions.Unknown,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=60.0,
             ),
@@ -679,8 +678,7 @@ class ApiGatewayServiceAsyncClient:
                 maximum=60.0,
                 multiplier=2,
                 predicate=retries.if_exception_type(
-                    core_exceptions.ServiceUnavailable,
-                    core_exceptions.Unknown,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=60.0,
             ),
@@ -811,8 +809,7 @@ class ApiGatewayServiceAsyncClient:
                 maximum=60.0,
                 multiplier=2,
                 predicate=retries.if_exception_type(
-                    core_exceptions.ServiceUnavailable,
-                    core_exceptions.Unknown,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=60.0,
             ),
@@ -1154,8 +1151,7 @@ class ApiGatewayServiceAsyncClient:
                 maximum=60.0,
                 multiplier=2,
                 predicate=retries.if_exception_type(
-                    core_exceptions.ServiceUnavailable,
-                    core_exceptions.Unknown,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=60.0,
             ),
@@ -1285,8 +1281,7 @@ class ApiGatewayServiceAsyncClient:
                 maximum=60.0,
                 multiplier=2,
                 predicate=retries.if_exception_type(
-                    core_exceptions.ServiceUnavailable,
-                    core_exceptions.Unknown,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=60.0,
             ),
@@ -1415,8 +1410,7 @@ class ApiGatewayServiceAsyncClient:
                 maximum=60.0,
                 multiplier=2,
                 predicate=retries.if_exception_type(
-                    core_exceptions.ServiceUnavailable,
-                    core_exceptions.Unknown,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=60.0,
             ),
@@ -1760,8 +1754,7 @@ class ApiGatewayServiceAsyncClient:
                 maximum=60.0,
                 multiplier=2,
                 predicate=retries.if_exception_type(
-                    core_exceptions.ServiceUnavailable,
-                    core_exceptions.Unknown,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=60.0,
             ),
@@ -1890,8 +1883,7 @@ class ApiGatewayServiceAsyncClient:
                 maximum=60.0,
                 multiplier=2,
                 predicate=retries.if_exception_type(
-                    core_exceptions.ServiceUnavailable,
-                    core_exceptions.Unknown,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=60.0,
             ),
@@ -2022,8 +2014,7 @@ class ApiGatewayServiceAsyncClient:
                 maximum=60.0,
                 multiplier=2,
                 predicate=retries.if_exception_type(
-                    core_exceptions.ServiceUnavailable,
-                    core_exceptions.Unknown,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=60.0,
             ),

@@ -16,7 +16,7 @@
 from collections import OrderedDict
 import os
 import re
-from typing import Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib
@@ -539,7 +539,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import apigateway_v1
+                    from google.cloud import apigateway_v1
 
             def sample_list_gateways():
                 # Create a client
@@ -647,7 +647,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import apigateway_v1
+                    from google.cloud import apigateway_v1
 
             def sample_get_gateway():
                 # Create a client
@@ -750,7 +750,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import apigateway_v1
+                    from google.cloud import apigateway_v1
 
             def sample_create_gateway():
                 # Create a client
@@ -884,7 +884,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import apigateway_v1
+                    from google.cloud import apigateway_v1
 
             def sample_update_gateway():
                 # Create a client
@@ -1011,7 +1011,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import apigateway_v1
+                    from google.cloud import apigateway_v1
 
             def sample_delete_gateway():
                 # Create a client
@@ -1131,7 +1131,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import apigateway_v1
+                    from google.cloud import apigateway_v1
 
             def sample_list_apis():
                 # Create a client
@@ -1239,7 +1239,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import apigateway_v1
+                    from google.cloud import apigateway_v1
 
             def sample_get_api():
                 # Create a client
@@ -1336,7 +1336,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import apigateway_v1
+                    from google.cloud import apigateway_v1
 
             def sample_create_api():
                 # Create a client
@@ -1465,7 +1465,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import apigateway_v1
+                    from google.cloud import apigateway_v1
 
             def sample_update_api():
                 # Create a client
@@ -1585,7 +1585,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import apigateway_v1
+                    from google.cloud import apigateway_v1
 
             def sample_delete_api():
                 # Create a client
@@ -1705,7 +1705,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import apigateway_v1
+                    from google.cloud import apigateway_v1
 
             def sample_list_api_configs():
                 # Create a client
@@ -1813,7 +1813,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import apigateway_v1
+                    from google.cloud import apigateway_v1
 
             def sample_get_api_config():
                 # Create a client
@@ -1913,7 +1913,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import apigateway_v1
+                    from google.cloud import apigateway_v1
 
             def sample_create_api_config():
                 # Create a client
@@ -2041,7 +2041,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import apigateway_v1
+                    from google.cloud import apigateway_v1
 
             def sample_update_api_config():
                 # Create a client
@@ -2162,7 +2162,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import apigateway_v1
+                    from google.cloud import apigateway_v1
 
             def sample_delete_api_config():
                 # Create a client
