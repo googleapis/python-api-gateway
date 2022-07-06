@@ -5119,7 +5119,6 @@ def test_api_gateway_service_transport_auth_adc(transport_class):
     [
         transports.ApiGatewayServiceGrpcTransport,
         transports.ApiGatewayServiceGrpcAsyncIOTransport,
-        transports.ApiGatewayServiceRestTransport,
     ],
 )
 def test_api_gateway_service_transport_auth_gdch_credentials(transport_class):
