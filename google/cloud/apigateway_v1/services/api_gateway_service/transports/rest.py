@@ -14,25 +14,27 @@
 # limitations under the License.
 #
 
-from google.auth.transport.requests import AuthorizedSession  # type: ignore
-import json  # type: ignore
-import grpc  # type: ignore
-from google.auth.transport.grpc import SslCredentials  # type: ignore
-from google.auth import credentials as ga_credentials  # type: ignore
-from google.api_core import exceptions as core_exceptions
-from google.api_core import retry as retries
-from google.api_core import rest_helpers
-from google.api_core import rest_streaming
-from google.api_core import path_template
-from google.api_core import gapic_v1
-
-from google.protobuf import json_format
-from google.api_core import operations_v1
-from requests import __version__ as requests_version
 import dataclasses
+import json  # type: ignore
 import re
 from typing import Callable, Dict, List, Optional, Sequence, Tuple, Union
 import warnings
+
+from google.api_core import (
+    gapic_v1,
+    operations_v1,
+    path_template,
+    rest_helpers,
+    rest_streaming,
+)
+from google.api_core import exceptions as core_exceptions
+from google.api_core import retry as retries
+from google.auth import credentials as ga_credentials  # type: ignore
+from google.auth.transport.grpc import SslCredentials  # type: ignore
+from google.auth.transport.requests import AuthorizedSession  # type: ignore
+from google.protobuf import json_format
+import grpc  # type: ignore
+from requests import __version__ as requests_version
 
 try:
     OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
@@ -40,11 +42,12 @@ except AttributeError:  # pragma: NO COVER
     OptionalRetry = Union[retries.Retry, object]  # type: ignore
 
 
-from google.cloud.apigateway_v1.types import apigateway
 from google.longrunning import operations_pb2  # type: ignore
 
-from .base import ApiGatewayServiceTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
+from google.cloud.apigateway_v1.types import apigateway
 
+from .base import ApiGatewayServiceTransport
+from .base import DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
 
 DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
     gapic_version=BASE_DEFAULT_CLIENT_INFO.gapic_version,
@@ -193,7 +196,10 @@ class ApiGatewayServiceRestInterceptor:
 
 
     """
-    def pre_create_api(self, request: apigateway.CreateApiRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[apigateway.CreateApiRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_create_api(
+        self, request: apigateway.CreateApiRequest, metadata: Sequence[Tuple[str, str]]
+    ) -> Tuple[apigateway.CreateApiRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for create_api
 
         Override in a subclass to manipulate the request or metadata
@@ -201,7 +207,9 @@ class ApiGatewayServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_create_api(self, response: operations_pb2.Operation) -> operations_pb2.Operation:
+    def post_create_api(
+        self, response: operations_pb2.Operation
+    ) -> operations_pb2.Operation:
         """Post-rpc interceptor for create_api
 
         Override in a subclass to manipulate the response
@@ -209,7 +217,12 @@ class ApiGatewayServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_create_api_config(self, request: apigateway.CreateApiConfigRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[apigateway.CreateApiConfigRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_create_api_config(
+        self,
+        request: apigateway.CreateApiConfigRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[apigateway.CreateApiConfigRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for create_api_config
 
         Override in a subclass to manipulate the request or metadata
@@ -217,7 +230,9 @@ class ApiGatewayServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_create_api_config(self, response: operations_pb2.Operation) -> operations_pb2.Operation:
+    def post_create_api_config(
+        self, response: operations_pb2.Operation
+    ) -> operations_pb2.Operation:
         """Post-rpc interceptor for create_api_config
 
         Override in a subclass to manipulate the response
@@ -225,7 +240,12 @@ class ApiGatewayServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_create_gateway(self, request: apigateway.CreateGatewayRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[apigateway.CreateGatewayRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_create_gateway(
+        self,
+        request: apigateway.CreateGatewayRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[apigateway.CreateGatewayRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for create_gateway
 
         Override in a subclass to manipulate the request or metadata
@@ -233,7 +253,9 @@ class ApiGatewayServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_create_gateway(self, response: operations_pb2.Operation) -> operations_pb2.Operation:
+    def post_create_gateway(
+        self, response: operations_pb2.Operation
+    ) -> operations_pb2.Operation:
         """Post-rpc interceptor for create_gateway
 
         Override in a subclass to manipulate the response
@@ -241,7 +263,10 @@ class ApiGatewayServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_delete_api(self, request: apigateway.DeleteApiRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[apigateway.DeleteApiRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_delete_api(
+        self, request: apigateway.DeleteApiRequest, metadata: Sequence[Tuple[str, str]]
+    ) -> Tuple[apigateway.DeleteApiRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for delete_api
 
         Override in a subclass to manipulate the request or metadata
@@ -249,7 +274,9 @@ class ApiGatewayServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_delete_api(self, response: operations_pb2.Operation) -> operations_pb2.Operation:
+    def post_delete_api(
+        self, response: operations_pb2.Operation
+    ) -> operations_pb2.Operation:
         """Post-rpc interceptor for delete_api
 
         Override in a subclass to manipulate the response
@@ -257,7 +284,12 @@ class ApiGatewayServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_delete_api_config(self, request: apigateway.DeleteApiConfigRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[apigateway.DeleteApiConfigRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_delete_api_config(
+        self,
+        request: apigateway.DeleteApiConfigRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[apigateway.DeleteApiConfigRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for delete_api_config
 
         Override in a subclass to manipulate the request or metadata
@@ -265,7 +297,9 @@ class ApiGatewayServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_delete_api_config(self, response: operations_pb2.Operation) -> operations_pb2.Operation:
+    def post_delete_api_config(
+        self, response: operations_pb2.Operation
+    ) -> operations_pb2.Operation:
         """Post-rpc interceptor for delete_api_config
 
         Override in a subclass to manipulate the response
@@ -273,7 +307,12 @@ class ApiGatewayServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_delete_gateway(self, request: apigateway.DeleteGatewayRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[apigateway.DeleteGatewayRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_delete_gateway(
+        self,
+        request: apigateway.DeleteGatewayRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[apigateway.DeleteGatewayRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for delete_gateway
 
         Override in a subclass to manipulate the request or metadata
@@ -281,7 +320,9 @@ class ApiGatewayServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_delete_gateway(self, response: operations_pb2.Operation) -> operations_pb2.Operation:
+    def post_delete_gateway(
+        self, response: operations_pb2.Operation
+    ) -> operations_pb2.Operation:
         """Post-rpc interceptor for delete_gateway
 
         Override in a subclass to manipulate the response
@@ -289,7 +330,10 @@ class ApiGatewayServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_get_api(self, request: apigateway.GetApiRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[apigateway.GetApiRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_get_api(
+        self, request: apigateway.GetApiRequest, metadata: Sequence[Tuple[str, str]]
+    ) -> Tuple[apigateway.GetApiRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for get_api
 
         Override in a subclass to manipulate the request or metadata
@@ -305,7 +349,12 @@ class ApiGatewayServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_get_api_config(self, request: apigateway.GetApiConfigRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[apigateway.GetApiConfigRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_get_api_config(
+        self,
+        request: apigateway.GetApiConfigRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[apigateway.GetApiConfigRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for get_api_config
 
         Override in a subclass to manipulate the request or metadata
@@ -313,7 +362,9 @@ class ApiGatewayServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_get_api_config(self, response: apigateway.ApiConfig) -> apigateway.ApiConfig:
+    def post_get_api_config(
+        self, response: apigateway.ApiConfig
+    ) -> apigateway.ApiConfig:
         """Post-rpc interceptor for get_api_config
 
         Override in a subclass to manipulate the response
@@ -321,7 +372,10 @@ class ApiGatewayServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_get_gateway(self, request: apigateway.GetGatewayRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[apigateway.GetGatewayRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_get_gateway(
+        self, request: apigateway.GetGatewayRequest, metadata: Sequence[Tuple[str, str]]
+    ) -> Tuple[apigateway.GetGatewayRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for get_gateway
 
         Override in a subclass to manipulate the request or metadata
@@ -337,7 +391,12 @@ class ApiGatewayServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_list_api_configs(self, request: apigateway.ListApiConfigsRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[apigateway.ListApiConfigsRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_list_api_configs(
+        self,
+        request: apigateway.ListApiConfigsRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[apigateway.ListApiConfigsRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for list_api_configs
 
         Override in a subclass to manipulate the request or metadata
@@ -345,7 +404,9 @@ class ApiGatewayServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_list_api_configs(self, response: apigateway.ListApiConfigsResponse) -> apigateway.ListApiConfigsResponse:
+    def post_list_api_configs(
+        self, response: apigateway.ListApiConfigsResponse
+    ) -> apigateway.ListApiConfigsResponse:
         """Post-rpc interceptor for list_api_configs
 
         Override in a subclass to manipulate the response
@@ -353,7 +414,10 @@ class ApiGatewayServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_list_apis(self, request: apigateway.ListApisRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[apigateway.ListApisRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_list_apis(
+        self, request: apigateway.ListApisRequest, metadata: Sequence[Tuple[str, str]]
+    ) -> Tuple[apigateway.ListApisRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for list_apis
 
         Override in a subclass to manipulate the request or metadata
@@ -361,7 +425,9 @@ class ApiGatewayServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_list_apis(self, response: apigateway.ListApisResponse) -> apigateway.ListApisResponse:
+    def post_list_apis(
+        self, response: apigateway.ListApisResponse
+    ) -> apigateway.ListApisResponse:
         """Post-rpc interceptor for list_apis
 
         Override in a subclass to manipulate the response
@@ -369,7 +435,12 @@ class ApiGatewayServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_list_gateways(self, request: apigateway.ListGatewaysRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[apigateway.ListGatewaysRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_list_gateways(
+        self,
+        request: apigateway.ListGatewaysRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[apigateway.ListGatewaysRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for list_gateways
 
         Override in a subclass to manipulate the request or metadata
@@ -377,7 +448,9 @@ class ApiGatewayServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_list_gateways(self, response: apigateway.ListGatewaysResponse) -> apigateway.ListGatewaysResponse:
+    def post_list_gateways(
+        self, response: apigateway.ListGatewaysResponse
+    ) -> apigateway.ListGatewaysResponse:
         """Post-rpc interceptor for list_gateways
 
         Override in a subclass to manipulate the response
@@ -385,7 +458,10 @@ class ApiGatewayServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_update_api(self, request: apigateway.UpdateApiRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[apigateway.UpdateApiRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_update_api(
+        self, request: apigateway.UpdateApiRequest, metadata: Sequence[Tuple[str, str]]
+    ) -> Tuple[apigateway.UpdateApiRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for update_api
 
         Override in a subclass to manipulate the request or metadata
@@ -393,7 +469,9 @@ class ApiGatewayServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_update_api(self, response: operations_pb2.Operation) -> operations_pb2.Operation:
+    def post_update_api(
+        self, response: operations_pb2.Operation
+    ) -> operations_pb2.Operation:
         """Post-rpc interceptor for update_api
 
         Override in a subclass to manipulate the response
@@ -401,7 +479,12 @@ class ApiGatewayServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_update_api_config(self, request: apigateway.UpdateApiConfigRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[apigateway.UpdateApiConfigRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_update_api_config(
+        self,
+        request: apigateway.UpdateApiConfigRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[apigateway.UpdateApiConfigRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for update_api_config
 
         Override in a subclass to manipulate the request or metadata
@@ -409,7 +492,9 @@ class ApiGatewayServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_update_api_config(self, response: operations_pb2.Operation) -> operations_pb2.Operation:
+    def post_update_api_config(
+        self, response: operations_pb2.Operation
+    ) -> operations_pb2.Operation:
         """Post-rpc interceptor for update_api_config
 
         Override in a subclass to manipulate the response
@@ -417,7 +502,12 @@ class ApiGatewayServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_update_gateway(self, request: apigateway.UpdateGatewayRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[apigateway.UpdateGatewayRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_update_gateway(
+        self,
+        request: apigateway.UpdateGatewayRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[apigateway.UpdateGatewayRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for update_gateway
 
         Override in a subclass to manipulate the request or metadata
@@ -425,7 +515,9 @@ class ApiGatewayServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_update_gateway(self, response: operations_pb2.Operation) -> operations_pb2.Operation:
+    def post_update_gateway(
+        self, response: operations_pb2.Operation
+    ) -> operations_pb2.Operation:
         """Post-rpc interceptor for update_gateway
 
         Override in a subclass to manipulate the response
@@ -456,20 +548,21 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
 
     """
 
-    def __init__(self, *,
-            host: str = 'apigateway.googleapis.com',
-            credentials: Optional[ga_credentials.Credentials] = None,
-            credentials_file: Optional[str] = None,
-            scopes: Optional[Sequence[str]] = None,
-            client_cert_source_for_mtls: Optional[Callable[[
-                ], Tuple[bytes, bytes]]] = None,
-            quota_project_id: Optional[str] = None,
-            client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
-            always_use_jwt_access: Optional[bool] = False,
-            url_scheme: str = 'https',
-            interceptor: Optional[ApiGatewayServiceRestInterceptor] = None,
-            api_audience: Optional[str] = None,
-            ) -> None:
+    def __init__(
+        self,
+        *,
+        host: str = "apigateway.googleapis.com",
+        credentials: Optional[ga_credentials.Credentials] = None,
+        credentials_file: Optional[str] = None,
+        scopes: Optional[Sequence[str]] = None,
+        client_cert_source_for_mtls: Optional[Callable[[], Tuple[bytes, bytes]]] = None,
+        quota_project_id: Optional[str] = None,
+        client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
+        always_use_jwt_access: Optional[bool] = False,
+        url_scheme: str = "https",
+        interceptor: Optional[ApiGatewayServiceRestInterceptor] = None,
+        api_audience: Optional[str] = None,
+    ) -> None:
         """Instantiate the transport.
 
         Args:
@@ -508,7 +601,9 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         # credentials object
         maybe_url_match = re.match("^(?P<scheme>http(?:s)?://)?(?P<host>.*)$", host)
         if maybe_url_match is None:
-            raise ValueError(f"Unexpected hostname structure: {host}")  # pragma: NO COVER
+            raise ValueError(
+                f"Unexpected hostname structure: {host}"
+            )  # pragma: NO COVER
 
         url_match_items = maybe_url_match.groupdict()
 
@@ -519,10 +614,11 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
             credentials=credentials,
             client_info=client_info,
             always_use_jwt_access=always_use_jwt_access,
-            api_audience=api_audience
+            api_audience=api_audience,
         )
         self._session = AuthorizedSession(
-            self._credentials, default_host=self.DEFAULT_HOST)
+            self._credentials, default_host=self.DEFAULT_HOST
+        )
         self._operations_client: Optional[operations_v1.AbstractOperationsClient] = None
         if client_cert_source_for_mtls:
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
@@ -538,18 +634,20 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         """
         # Only create a new client if we do not already have one.
         if self._operations_client is None:
-            http_options: Dict[str, List[Dict[str, str]]] = {
-            }
+            http_options: Dict[str, List[Dict[str, str]]] = {}
 
             rest_transport = operations_v1.OperationsRestTransport(
-                    host=self._host,
-                    # use the credentials which are saved
-                    credentials=self._credentials,
-                    scopes=self._scopes,
-                    http_options=http_options,
-                    path_prefix="v1")
+                host=self._host,
+                # use the credentials which are saved
+                credentials=self._credentials,
+                scopes=self._scopes,
+                http_options=http_options,
+                path_prefix="v1",
+            )
 
-            self._operations_client = operations_v1.AbstractOperationsClient(transport=rest_transport)
+            self._operations_client = operations_v1.AbstractOperationsClient(
+                transport=rest_transport
+            )
 
         # Return the client from cache.
         return self._operations_client
@@ -558,19 +656,26 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         def __hash__(self):
             return hash("CreateApi")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-            "apiId" : "",        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {
+            "apiId": "",
+        }
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: apigateway.CreateApiRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> operations_pb2.Operation:
+        def __call__(
+            self,
+            request: apigateway.CreateApiRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> operations_pb2.Operation:
             r"""Call the create api method over HTTP.
 
             Args:
@@ -592,11 +697,12 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'post',
-                'uri': '/v1/{parent=projects/*/locations/*}/apis',
-                'body': 'api',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "post",
+                    "uri": "/v1/{parent=projects/*/locations/*}/apis",
+                    "body": "api",
+                },
             ]
             request, metadata = self._interceptor.pre_create_api(request, metadata)
             pb_request = apigateway.CreateApiRequest.pb(request)
@@ -605,33 +711,35 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -648,19 +756,26 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         def __hash__(self):
             return hash("CreateApiConfig")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-            "apiConfigId" : "",        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {
+            "apiConfigId": "",
+        }
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: apigateway.CreateApiConfigRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> operations_pb2.Operation:
+        def __call__(
+            self,
+            request: apigateway.CreateApiConfigRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> operations_pb2.Operation:
             r"""Call the create api config method over HTTP.
 
             Args:
@@ -682,46 +797,51 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'post',
-                'uri': '/v1/{parent=projects/*/locations/*/apis/*}/configs',
-                'body': 'api_config',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "post",
+                    "uri": "/v1/{parent=projects/*/locations/*/apis/*}/configs",
+                    "body": "api_config",
+                },
             ]
-            request, metadata = self._interceptor.pre_create_api_config(request, metadata)
+            request, metadata = self._interceptor.pre_create_api_config(
+                request, metadata
+            )
             pb_request = apigateway.CreateApiConfigRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -738,19 +858,26 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         def __hash__(self):
             return hash("CreateGateway")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-            "gatewayId" : "",        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {
+            "gatewayId": "",
+        }
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: apigateway.CreateGatewayRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> operations_pb2.Operation:
+        def __call__(
+            self,
+            request: apigateway.CreateGatewayRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> operations_pb2.Operation:
             r"""Call the create gateway method over HTTP.
 
             Args:
@@ -772,11 +899,12 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'post',
-                'uri': '/v1/{parent=projects/*/locations/*}/gateways',
-                'body': 'gateway',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "post",
+                    "uri": "/v1/{parent=projects/*/locations/*}/gateways",
+                    "body": "gateway",
+                },
             ]
             request, metadata = self._interceptor.pre_create_gateway(request, metadata)
             pb_request = apigateway.CreateGatewayRequest.pb(request)
@@ -785,33 +913,35 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -828,19 +958,24 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         def __hash__(self):
             return hash("DeleteApi")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: apigateway.DeleteApiRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> operations_pb2.Operation:
+        def __call__(
+            self,
+            request: apigateway.DeleteApiRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> operations_pb2.Operation:
             r"""Call the delete api method over HTTP.
 
             Args:
@@ -862,37 +997,40 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'delete',
-                'uri': '/v1/{name=projects/*/locations/*/apis/*}',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "delete",
+                    "uri": "/v1/{name=projects/*/locations/*/apis/*}",
+                },
             ]
             request, metadata = self._interceptor.pre_delete_api(request, metadata)
             pb_request = apigateway.DeleteApiRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -909,19 +1047,24 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         def __hash__(self):
             return hash("DeleteApiConfig")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: apigateway.DeleteApiConfigRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> operations_pb2.Operation:
+        def __call__(
+            self,
+            request: apigateway.DeleteApiConfigRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> operations_pb2.Operation:
             r"""Call the delete api config method over HTTP.
 
             Args:
@@ -943,37 +1086,42 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'delete',
-                'uri': '/v1/{name=projects/*/locations/*/apis/*/configs/*}',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "delete",
+                    "uri": "/v1/{name=projects/*/locations/*/apis/*/configs/*}",
+                },
             ]
-            request, metadata = self._interceptor.pre_delete_api_config(request, metadata)
+            request, metadata = self._interceptor.pre_delete_api_config(
+                request, metadata
+            )
             pb_request = apigateway.DeleteApiConfigRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -990,19 +1138,24 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         def __hash__(self):
             return hash("DeleteGateway")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: apigateway.DeleteGatewayRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> operations_pb2.Operation:
+        def __call__(
+            self,
+            request: apigateway.DeleteGatewayRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> operations_pb2.Operation:
             r"""Call the delete gateway method over HTTP.
 
             Args:
@@ -1024,37 +1177,40 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'delete',
-                'uri': '/v1/{name=projects/*/locations/*/gateways/*}',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "delete",
+                    "uri": "/v1/{name=projects/*/locations/*/gateways/*}",
+                },
             ]
             request, metadata = self._interceptor.pre_delete_gateway(request, metadata)
             pb_request = apigateway.DeleteGatewayRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -1071,19 +1227,24 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         def __hash__(self):
             return hash("GetApi")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: apigateway.GetApiRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> apigateway.Api:
+        def __call__(
+            self,
+            request: apigateway.GetApiRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> apigateway.Api:
             r"""Call the get api method over HTTP.
 
             Args:
@@ -1104,37 +1265,40 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'get',
-                'uri': '/v1/{name=projects/*/locations/*/apis/*}',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "get",
+                    "uri": "/v1/{name=projects/*/locations/*/apis/*}",
+                },
             ]
             request, metadata = self._interceptor.pre_get_api(request, metadata)
             pb_request = apigateway.GetApiRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -1153,19 +1317,24 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         def __hash__(self):
             return hash("GetApiConfig")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: apigateway.GetApiConfigRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> apigateway.ApiConfig:
+        def __call__(
+            self,
+            request: apigateway.GetApiConfigRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> apigateway.ApiConfig:
             r"""Call the get api config method over HTTP.
 
             Args:
@@ -1187,37 +1356,40 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'get',
-                'uri': '/v1/{name=projects/*/locations/*/apis/*/configs/*}',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "get",
+                    "uri": "/v1/{name=projects/*/locations/*/apis/*/configs/*}",
+                },
             ]
             request, metadata = self._interceptor.pre_get_api_config(request, metadata)
             pb_request = apigateway.GetApiConfigRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -1236,19 +1408,24 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         def __hash__(self):
             return hash("GetGateway")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: apigateway.GetGatewayRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> apigateway.Gateway:
+        def __call__(
+            self,
+            request: apigateway.GetGatewayRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> apigateway.Gateway:
             r"""Call the get gateway method over HTTP.
 
             Args:
@@ -1273,37 +1450,40 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'get',
-                'uri': '/v1/{name=projects/*/locations/*/gateways/*}',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "get",
+                    "uri": "/v1/{name=projects/*/locations/*/gateways/*}",
+                },
             ]
             request, metadata = self._interceptor.pre_get_gateway(request, metadata)
             pb_request = apigateway.GetGatewayRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -1322,19 +1502,24 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         def __hash__(self):
             return hash("ListApiConfigs")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: apigateway.ListApiConfigsRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> apigateway.ListApiConfigsResponse:
+        def __call__(
+            self,
+            request: apigateway.ListApiConfigsRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> apigateway.ListApiConfigsResponse:
             r"""Call the list api configs method over HTTP.
 
             Args:
@@ -1355,37 +1540,42 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'get',
-                'uri': '/v1/{parent=projects/*/locations/*/apis/*}/configs',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "get",
+                    "uri": "/v1/{parent=projects/*/locations/*/apis/*}/configs",
+                },
             ]
-            request, metadata = self._interceptor.pre_list_api_configs(request, metadata)
+            request, metadata = self._interceptor.pre_list_api_configs(
+                request, metadata
+            )
             pb_request = apigateway.ListApiConfigsRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -1404,19 +1594,24 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         def __hash__(self):
             return hash("ListApis")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: apigateway.ListApisRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> apigateway.ListApisResponse:
+        def __call__(
+            self,
+            request: apigateway.ListApisRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> apigateway.ListApisResponse:
             r"""Call the list apis method over HTTP.
 
             Args:
@@ -1437,37 +1632,40 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'get',
-                'uri': '/v1/{parent=projects/*/locations/*}/apis',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "get",
+                    "uri": "/v1/{parent=projects/*/locations/*}/apis",
+                },
             ]
             request, metadata = self._interceptor.pre_list_apis(request, metadata)
             pb_request = apigateway.ListApisRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -1486,19 +1684,24 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         def __hash__(self):
             return hash("ListGateways")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: apigateway.ListGatewaysRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> apigateway.ListGatewaysResponse:
+        def __call__(
+            self,
+            request: apigateway.ListGatewaysRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> apigateway.ListGatewaysResponse:
             r"""Call the list gateways method over HTTP.
 
             Args:
@@ -1519,37 +1722,40 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'get',
-                'uri': '/v1/{parent=projects/*/locations/*}/gateways',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "get",
+                    "uri": "/v1/{parent=projects/*/locations/*}/gateways",
+                },
             ]
             request, metadata = self._interceptor.pre_list_gateways(request, metadata)
             pb_request = apigateway.ListGatewaysRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -1568,19 +1774,24 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         def __hash__(self):
             return hash("UpdateApi")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: apigateway.UpdateApiRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> operations_pb2.Operation:
+        def __call__(
+            self,
+            request: apigateway.UpdateApiRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> operations_pb2.Operation:
             r"""Call the update api method over HTTP.
 
             Args:
@@ -1602,11 +1813,12 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'patch',
-                'uri': '/v1/{api.name=projects/*/locations/*/apis/*}',
-                'body': 'api',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "patch",
+                    "uri": "/v1/{api.name=projects/*/locations/*/apis/*}",
+                    "body": "api",
+                },
             ]
             request, metadata = self._interceptor.pre_update_api(request, metadata)
             pb_request = apigateway.UpdateApiRequest.pb(request)
@@ -1615,33 +1827,35 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -1658,19 +1872,24 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         def __hash__(self):
             return hash("UpdateApiConfig")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: apigateway.UpdateApiConfigRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> operations_pb2.Operation:
+        def __call__(
+            self,
+            request: apigateway.UpdateApiConfigRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> operations_pb2.Operation:
             r"""Call the update api config method over HTTP.
 
             Args:
@@ -1692,46 +1911,51 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'patch',
-                'uri': '/v1/{api_config.name=projects/*/locations/*/apis/*/configs/*}',
-                'body': 'api_config',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "patch",
+                    "uri": "/v1/{api_config.name=projects/*/locations/*/apis/*/configs/*}",
+                    "body": "api_config",
+                },
             ]
-            request, metadata = self._interceptor.pre_update_api_config(request, metadata)
+            request, metadata = self._interceptor.pre_update_api_config(
+                request, metadata
+            )
             pb_request = apigateway.UpdateApiConfigRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -1748,19 +1972,24 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         def __hash__(self):
             return hash("UpdateGateway")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: apigateway.UpdateGatewayRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> operations_pb2.Operation:
+        def __call__(
+            self,
+            request: apigateway.UpdateGatewayRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> operations_pb2.Operation:
             r"""Call the update gateway method over HTTP.
 
             Args:
@@ -1782,11 +2011,12 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'patch',
-                'uri': '/v1/{gateway.name=projects/*/locations/*/gateways/*}',
-                'body': 'gateway',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "patch",
+                    "uri": "/v1/{gateway.name=projects/*/locations/*/gateways/*}",
+                    "body": "gateway",
+                },
             ]
             request, metadata = self._interceptor.pre_update_gateway(request, metadata)
             pb_request = apigateway.UpdateGatewayRequest.pb(request)
@@ -1795,33 +2025,35 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -1835,124 +2067,124 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
             return resp
 
     @property
-    def create_api(self) -> Callable[
-            [apigateway.CreateApiRequest],
-            operations_pb2.Operation]:
+    def create_api(
+        self,
+    ) -> Callable[[apigateway.CreateApiRequest], operations_pb2.Operation]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._CreateApi(self._session, self._host, self._interceptor) # type: ignore
+        return self._CreateApi(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def create_api_config(self) -> Callable[
-            [apigateway.CreateApiConfigRequest],
-            operations_pb2.Operation]:
+    def create_api_config(
+        self,
+    ) -> Callable[[apigateway.CreateApiConfigRequest], operations_pb2.Operation]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._CreateApiConfig(self._session, self._host, self._interceptor) # type: ignore
+        return self._CreateApiConfig(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def create_gateway(self) -> Callable[
-            [apigateway.CreateGatewayRequest],
-            operations_pb2.Operation]:
+    def create_gateway(
+        self,
+    ) -> Callable[[apigateway.CreateGatewayRequest], operations_pb2.Operation]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._CreateGateway(self._session, self._host, self._interceptor) # type: ignore
+        return self._CreateGateway(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def delete_api(self) -> Callable[
-            [apigateway.DeleteApiRequest],
-            operations_pb2.Operation]:
+    def delete_api(
+        self,
+    ) -> Callable[[apigateway.DeleteApiRequest], operations_pb2.Operation]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._DeleteApi(self._session, self._host, self._interceptor) # type: ignore
+        return self._DeleteApi(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def delete_api_config(self) -> Callable[
-            [apigateway.DeleteApiConfigRequest],
-            operations_pb2.Operation]:
+    def delete_api_config(
+        self,
+    ) -> Callable[[apigateway.DeleteApiConfigRequest], operations_pb2.Operation]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._DeleteApiConfig(self._session, self._host, self._interceptor) # type: ignore
+        return self._DeleteApiConfig(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def delete_gateway(self) -> Callable[
-            [apigateway.DeleteGatewayRequest],
-            operations_pb2.Operation]:
+    def delete_gateway(
+        self,
+    ) -> Callable[[apigateway.DeleteGatewayRequest], operations_pb2.Operation]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._DeleteGateway(self._session, self._host, self._interceptor) # type: ignore
+        return self._DeleteGateway(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def get_api(self) -> Callable[
-            [apigateway.GetApiRequest],
-            apigateway.Api]:
+    def get_api(self) -> Callable[[apigateway.GetApiRequest], apigateway.Api]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._GetApi(self._session, self._host, self._interceptor) # type: ignore
+        return self._GetApi(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def get_api_config(self) -> Callable[
-            [apigateway.GetApiConfigRequest],
-            apigateway.ApiConfig]:
+    def get_api_config(
+        self,
+    ) -> Callable[[apigateway.GetApiConfigRequest], apigateway.ApiConfig]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._GetApiConfig(self._session, self._host, self._interceptor) # type: ignore
+        return self._GetApiConfig(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def get_gateway(self) -> Callable[
-            [apigateway.GetGatewayRequest],
-            apigateway.Gateway]:
+    def get_gateway(
+        self,
+    ) -> Callable[[apigateway.GetGatewayRequest], apigateway.Gateway]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._GetGateway(self._session, self._host, self._interceptor) # type: ignore
+        return self._GetGateway(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def list_api_configs(self) -> Callable[
-            [apigateway.ListApiConfigsRequest],
-            apigateway.ListApiConfigsResponse]:
+    def list_api_configs(
+        self,
+    ) -> Callable[
+        [apigateway.ListApiConfigsRequest], apigateway.ListApiConfigsResponse
+    ]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._ListApiConfigs(self._session, self._host, self._interceptor) # type: ignore
+        return self._ListApiConfigs(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def list_apis(self) -> Callable[
-            [apigateway.ListApisRequest],
-            apigateway.ListApisResponse]:
+    def list_apis(
+        self,
+    ) -> Callable[[apigateway.ListApisRequest], apigateway.ListApisResponse]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._ListApis(self._session, self._host, self._interceptor) # type: ignore
+        return self._ListApis(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def list_gateways(self) -> Callable[
-            [apigateway.ListGatewaysRequest],
-            apigateway.ListGatewaysResponse]:
+    def list_gateways(
+        self,
+    ) -> Callable[[apigateway.ListGatewaysRequest], apigateway.ListGatewaysResponse]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._ListGateways(self._session, self._host, self._interceptor) # type: ignore
+        return self._ListGateways(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def update_api(self) -> Callable[
-            [apigateway.UpdateApiRequest],
-            operations_pb2.Operation]:
+    def update_api(
+        self,
+    ) -> Callable[[apigateway.UpdateApiRequest], operations_pb2.Operation]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._UpdateApi(self._session, self._host, self._interceptor) # type: ignore
+        return self._UpdateApi(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def update_api_config(self) -> Callable[
-            [apigateway.UpdateApiConfigRequest],
-            operations_pb2.Operation]:
+    def update_api_config(
+        self,
+    ) -> Callable[[apigateway.UpdateApiConfigRequest], operations_pb2.Operation]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._UpdateApiConfig(self._session, self._host, self._interceptor) # type: ignore
+        return self._UpdateApiConfig(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def update_gateway(self) -> Callable[
-            [apigateway.UpdateGatewayRequest],
-            operations_pb2.Operation]:
+    def update_gateway(
+        self,
+    ) -> Callable[[apigateway.UpdateGatewayRequest], operations_pb2.Operation]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._UpdateGateway(self._session, self._host, self._interceptor) # type: ignore
+        return self._UpdateGateway(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
     def kind(self) -> str:
@@ -1962,6 +2194,4 @@ class ApiGatewayServiceRestTransport(ApiGatewayServiceTransport):
         self._session.close()
 
 
-__all__=(
-    'ApiGatewayServiceRestTransport',
-)
+__all__ = ("ApiGatewayServiceRestTransport",)
